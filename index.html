@@ -3,49 +3,258 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LucidDreams</title>
+    <title>LucidDreams — Diario dei sogni lucidi</title>
     <meta name="title-it" content="LucidDreams — Diario dei sogni lucidi" />
     <meta name="title-en" content="LucidDreams — Lucid dream journal" />
-    <meta name="description" content="LucidDreams: il diario dei sogni per allenare la lucidità. Dream journal to practise lucid dreaming." />
+    <meta name="description" content="LucidDreams: il diario per ricordare i sogni e imparare a sognare in modo lucido. A journal to remember your dreams and learn lucid dreaming." />
+    <meta name="theme-color" content="#07061a" />
     <link rel="icon" href="logo-120.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="wrap">
-      <header class="site">
-        <a class="brand" href="./"><img src="logo-120.png" alt="" /><span>LucidDreams</span></a>
-        <nav class="lang"><a href="?lang=it" data-set="it">IT</a><a href="?lang=en" data-set="en">EN</a></nav>
-      </header>
+    <div class="sky">
+      <div class="wrap">
+        <header class="site">
+          <a class="brand" href="./"><img src="logo-120.png" alt="" /><span>LucidDreams</span></a>
+          <nav class="lang" aria-label="Lingua / Language"><a href="?lang=it" data-set="it">IT</a><a href="?lang=en" data-set="en">EN</a></nav>
+        </header>
 
-      <main>
-        <div class="hero">
-          <img src="logo-120.png" alt="LucidDreams" />
-          <h1>LucidDreams</h1>
-          <p data-lang="it">Dove il sogno incontra la realtà. Il diario per ricordare i tuoi sogni e imparare a sognare in modo lucido.</p>
-          <p data-lang="en" hidden>Where dreams meet reality. The journal to remember your dreams and learn to dream lucidly.</p>
+        <section class="hero">
+          <div>
+            <p class="eyebrow-time"><span data-clock>--:--</span> · <span data-greeting>Buonanotte</span></p>
+            <h1 data-lang="it">Ricorda i sogni.<br /><em>Poi impara a guidarli.</em></h1>
+            <h1 data-lang="en" hidden>Remember your dreams.<br /><em>Then learn to steer them.</em></h1>
+            <p class="lede" data-en="The dream journal that turns what you remember at dawn into the clues for your next lucid dream.">Il diario dei sogni che trasforma ciò che ricordi all’alba negli indizi del tuo prossimo sogno lucido.</p>
+            <div class="stores">
+              <a class="store" aria-disabled="true" role="link" data-store="ios">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.8" /><path d="M10.5 18.5h3" stroke-linecap="round" /></svg>
+                <span><small data-en="Coming soon on the">Presto su</small><strong>App Store</strong></span>
+              </a>
+              <a class="store" aria-disabled="true" role="link" data-store="android">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 3.5l12 8.5-12 8.5z" stroke-linejoin="round" /></svg>
+                <span><small data-en="Coming soon on">Presto su</small><strong>Google Play</strong></span>
+              </a>
+            </div>
+            <p class="stores-note" data-en="iPhone and Android. Free download.">Per iPhone e Android. Download gratuito.</p>
+          </div>
+
+          <div class="phone" aria-hidden="true">
+            <div class="screen">
+              <p class="s-title" data-greeting>Buonanotte</p>
+              <p class="s-sub" data-greeting-sub>Mentre ti addormenti: “la prossima volta saprò di sognare”.</p>
+              <div class="stats">
+                <div><b>24</b><span data-en="dreams">sogni</span></div>
+                <div><b style="color: var(--lucid)">7</b><span data-en="lucid">lucidi</span></div>
+                <div><b style="color: var(--moon)">5</b><span data-en="in 7 days">in 7 giorni</span></div>
+              </div>
+              <div class="card lucid">
+                <div class="row"><span data-en="Tue, November 11">mar 11 novembre</span><span class="stars">★★★★★</span><span class="badge" data-en="✦ Lucid 4/5">✦ Lucido 4/5</span></div>
+                <h4 data-en="Flying over the lagoon">Il volo sulla laguna</h4>
+                <p data-en="I saw my hands glowing and understood I was dreaming…">Ho visto le mie mani luminose e ho capito che stavo sognando…</p>
+                <div class="tags">#volare · #acqua</div>
+              </div>
+              <div class="card">
+                <div class="row"><span data-en="Mon, November 10">lun 10 novembre</span><span class="stars">★★★</span></div>
+                <h4 data-en="The house with endless stairs">La casa dalle scale infinite</h4>
+                <p data-en="Each door opened onto my old school…">Ogni porta si apriva sulla mia vecchia scuola…</p>
+              </div>
+              <div class="card lucid">
+                <div class="row"><span data-en="Sat, November 8">sab 8 novembre</span><span class="stars">★★★★</span><span class="badge" data-en="✦ Lucid 2/5">✦ Lucido 2/5</span></div>
+                <h4 data-en="The clock that kept changing">L’orologio che cambiava ora</h4>
+                <p data-en="I looked twice and the time was different…">L’ho guardato due volte e l’ora era diversa…</p>
+              </div>
+              <span class="fab" data-en="+ New dream">+ Nuovo sogno</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <section class="section" id="app">
+        <div class="section-head">
+          <h2 data-en="One night, four moments">Una notte, quattro momenti</h2>
+          <p data-en="LucidDreams accompanies you from waking up to falling asleep. Swipe through the real app screens.">LucidDreams ti accompagna dal risveglio all’addormentamento. Scorri le schermate reali dell’app.</p>
         </div>
 
-        <ul class="features" data-lang="it">
-          <li><strong>Diario dei sogni</strong><span>Annota ogni sogno al risveglio, con emozioni, tag, nitidezza e voto.</span></li>
-          <li><strong>Dream sign</strong><span>Riconosci gli indizi ricorrenti che ti aiutano a capire che stai sognando.</span></li>
-          <li><strong>Promemoria e reality check</strong><span>Notifiche al risveglio e durante il giorno per allenare la consapevolezza.</span></li>
-          <li><strong>Privato e sincronizzato</strong><span>I tuoi sogni sono visibili solo a te, sul telefono e sui tuoi dispositivi.</span></li>
+        <div class="carousel" data-carousel>
+          <div class="track">
+            <article class="screen-slide">
+              <div class="phone" aria-hidden="true">
+                <div class="screen">
+                  <p class="s-title" data-en="New dream">Nuovo sogno</p>
+                  <div class="card"><h4 data-en="Flying over the lagoon">Il volo sulla laguna</h4><p data-en="I saw my hands glowing…">Ho visto le mie mani luminose…</p></div>
+                  <div class="toggle"><span>✦</span><span><b data-en="I was lucid">Era un sogno lucido</b><small data-en="You knew you were dreaming.">Sapevi di stare sognando.</small></span></div>
+                  <p class="label" data-en="Recall clarity">Nitidezza del ricordo</p>
+                  <div class="moons"><i class="on">🌘</i><i class="on">🌗</i><i class="on">🌖</i><i class="on">🌕</i><i>✨</i></div>
+                  <p class="label" data-en="Dream rating">Voto del sogno</p>
+                  <div class="rating"><i class="on">⭐</i><i class="on">⭐</i><i class="on">⭐</i><i class="on">⭐</i><i class="on">⭐</i></div>
+                </div>
+              </div>
+              <div>
+                <p class="step" data-en="At dawn">All’alba</p>
+                <h3 data-en="Write it down before it fades">Scrivilo prima che svanisca</h3>
+                <p data-en="Title, story, mood and tags. Mark whether you were lucid, how clearly you remember it and how much you enjoyed it, from one to five stars.">Titolo, racconto, atmosfera e tag. Segna se eri lucido, quanto ricordi con chiarezza e quanto ti è piaciuto, da una a cinque stelle.</p>
+              </div>
+            </article>
+
+            <article class="screen-slide">
+              <div class="phone" aria-hidden="true">
+                <div class="screen">
+                  <p class="s-title" data-en="Dream signs">Dream sign</p>
+                  <p class="s-sub" data-en="The recurring clues of your dreams.">Gli indizi ricorrenti dei tuoi sogni.</p>
+                  <div class="card"><div class="row"><span data-en="🕊️ Action">🕊️ Azione</span><span>9</span></div><h4 data-en="Flying">Volare</h4></div>
+                  <div class="card"><div class="row"><span data-en="🏛️ Setting">🏛️ Contesto</span><span>6</span></div><h4 data-en="Back at school">Tornare a scuola</h4></div>
+                  <div class="card"><div class="row"><span data-en="🎭 Form">🎭 Forma</span><span>4</span></div><h4 data-en="Teeth falling out">Denti che cadono</h4></div>
+                  <div class="card"><div class="row"><span data-en="💭 Awareness">💭 Consapevolezza</span><span>2</span></div><h4 data-en="Sudden calm">Calma improvvisa</h4></div>
+                </div>
+              </div>
+              <div>
+                <p class="step" data-en="During the day">Durante il giorno</p>
+                <h3 data-en="Learn your dream signs">Riconosci i tuoi dream sign</h3>
+                <p data-en="Actions, forms, settings and feelings that keep coming back. The app counts how many dreams each one appears in, so you know what to watch for.">Azioni, forme, luoghi e sensazioni che ritornano. L’app conta in quanti sogni compare ciascuno, così sai a cosa fare attenzione.</p>
+              </div>
+            </article>
+
+            <article class="screen-slide">
+              <div class="phone" aria-hidden="true">
+                <div class="screen" style="padding-top: 70px">
+                  <div class="notif"><div class="row"><span>LUCIDDREAMS</span><span>14:00</span></div><b>Reality check</b><span data-en="Look at your hands and count your fingers.">Guarda le tue mani e conta le dita.</span></div>
+                  <div class="notif"><div class="row"><span>LUCIDDREAMS</span><span>18:00</span></div><b>Reality check</b><span data-en="Look at the clock twice. Is the time consistent?">Guarda l’orologio due volte. L’ora è coerente?</span></div>
+                  <div class="notif"><div class="row"><span>LUCIDDREAMS</span><span>07:30</span></div><b data-en="What did you dream?">Cosa hai sognato?</b><span data-en="Write your dream down before it fades.">Scrivi il tuo sogno prima che svanisca.</span></div>
+                </div>
+              </div>
+              <div>
+                <p class="step" data-en="All day long">Per tutta la giornata</p>
+                <h3 data-en="Reminders that build the habit">Promemoria che creano l’abitudine</h3>
+                <p data-en="Up to eight daily reality checks at the times you choose, plus a morning reminder to fill in your journal. Everything is scheduled on your device.">Fino a otto reality check al giorno negli orari che scegli, più un promemoria al risveglio per il diario. Tutto programmato sul dispositivo.</p>
+              </div>
+            </article>
+
+            <article class="screen-slide">
+              <div class="phone" aria-hidden="true">
+                <div class="screen">
+                  <p class="s-title" data-en="Settings">Impostazioni</p>
+                  <div class="card">
+                    <div class="set-row"><span><span data-en="Biometric lock">Blocco con biometria</span><small>Face ID</small></span><span class="switch"></span></div>
+                    <div class="set-row"><span><span data-en="Morning journal">Diario al risveglio</span><small>07:30</small></span><span class="switch"></span></div>
+                    <div class="set-row"><span><span>Reality check</span><small>10:00 · 14:00 · 18:00</small></span><span class="switch"></span></div>
+                  </div>
+                  <p class="label" data-en="Language">Lingua</p>
+                  <div class="chips"><span class="on">Italiano</span><span>English</span></div>
+                  <p class="label" data-en="Sync">Sincronizzazione</p>
+                  <div class="card"><p data-en="Last synced: just now">Ultima sincronizzazione: adesso</p></div>
+                </div>
+              </div>
+              <div>
+                <p class="step" data-en="At night">Di notte</p>
+                <h3 data-en="Your journal, on every device">Il tuo diario, ovunque</h3>
+                <p data-en="Dreams are saved on your phone first and work offline, then sync to your account. Sign in with email, Apple or Google.">I sogni si salvano prima sul telefono e funzionano offline, poi si sincronizzano con il tuo account. Accedi con email, Apple o Google.</p>
+              </div>
+            </article>
+          </div>
+          <div class="controls">
+            <div class="dots"></div>
+            <div class="arrows">
+              <button type="button" data-prev aria-label="Indietro / Previous">←</button>
+              <button type="button" data-next aria-label="Avanti / Next">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="check" aria-live="polite">
+        <h2 data-en="Are you dreaming right now?">Stai sognando, adesso?</h2>
+        <p class="intro" data-en="A reality check is a question you ask yourself during the day. Ask it often enough and you start asking it in your dreams too. Try one.">Un reality check è una domanda che ti fai durante il giorno. Se la ripeti abbastanza, inizi a fartela anche nei sogni. Provane uno.</p>
+        <p class="check-out" data-check-out data-en="Tap the button to draw a reality check.">Tocca il pulsante per estrarre un reality check.</p>
+        <button class="btn" type="button" data-check-btn data-en="Do a reality check">Fai un reality check</button>
+      </section>
+
+      <section class="section" id="tecniche">
+        <div class="section-head">
+          <h2 data-en="Techniques for lucid dreaming">Le tecniche per sognare lucido</h2>
+          <p data-en="The most widely used methods, explained simply. LucidDreams gives you the tools to practise them every day.">I metodi più diffusi, spiegati in modo semplice. LucidDreams ti dà gli strumenti per praticarli ogni giorno.</p>
+        </div>
+        <div class="carousel" data-carousel>
+          <div class="track">
+            <article class="tech">
+              <span class="mark">01</span>
+              <h3 data-en="Dream journal">Diario dei sogni</h3>
+              <p data-en="Writing every dream down as soon as you wake trains your memory: within a few weeks you remember more dreams, in more detail.">Scrivere ogni sogno appena sveglio allena la memoria: in poche settimane ricordi più sogni, con più dettagli.</p>
+              <span class="when" data-en="When: every morning">Quando: ogni mattina</span>
+            </article>
+            <article class="tech">
+              <span class="mark">02</span>
+              <h3>Reality check</h3>
+              <p data-en="Ask yourself “am I dreaming?” several times a day and verify it with a test, such as counting your fingers. The habit carries over into dreams.">Chiediti “sto sognando?” più volte al giorno e verificalo con un test, come contare le dita. L’abitudine passa nei sogni.</p>
+              <span class="when" data-en="When: during the day">Quando: durante il giorno</span>
+            </article>
+            <article class="tech">
+              <span class="mark">03</span>
+              <h3>Dream sign</h3>
+              <p data-en="Reread your journal and look for what keeps coming back. When it shows up in a dream, it becomes your signal that you are dreaming.">Rileggi il diario e cerca ciò che ritorna. Quando compare in un sogno, diventa il tuo segnale che stai sognando.</p>
+              <span class="when" data-en="When: once a week">Quando: una volta a settimana</span>
+            </article>
+            <article class="tech">
+              <span class="mark">04</span>
+              <h3>MILD</h3>
+              <p data-en="As you fall asleep, recall a recent dream and repeat the intention “next time, I’ll know I’m dreaming”, imagining yourself becoming lucid.">Mentre ti addormenti, ricorda un sogno recente e ripeti l’intenzione “la prossima volta saprò di sognare”, immaginando di diventare lucido.</p>
+              <span class="when" data-en="When: as you fall asleep">Quando: all’addormentamento</span>
+            </article>
+            <article class="tech">
+              <span class="mark">05</span>
+              <h3>WBTB</h3>
+              <p data-en="Wake Back To Bed: wake up after about five or six hours of sleep, stay awake a little while thinking about lucid dreaming, then go back to sleep.">Wake Back To Bed: svegliati dopo circa cinque o sei ore di sonno, resta sveglio poco tempo pensando ai sogni lucidi, poi torna a dormire.</p>
+              <span class="when" data-en="When: in the second half of the night">Quando: nella seconda metà della notte</span>
+            </article>
+          </div>
+          <div class="controls">
+            <div class="dots"></div>
+            <div class="arrows">
+              <button type="button" data-prev aria-label="Indietro / Previous">←</button>
+              <button type="button" data-next aria-label="Avanti / Next">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section private" id="privacy">
+        <div>
+          <h2 data-en="Your dreams stay yours">I tuoi sogni restano tuoi</h2>
+          <p data-en="A dream journal is one of the most personal things you can write. That is why LucidDreams is built to keep it private.">Un diario dei sogni è una delle cose più personali che si possano scrivere. Per questo LucidDreams è pensato per restare privato.</p>
+          <a href="privacy.html" data-en="Read the privacy policy →">Leggi l’informativa privacy →</a>
+        </div>
+        <ul class="promises">
+          <li><span class="ic">🔒</span><span><b data-en="Visible only to you">Visibili solo a te</b><span data-en="Each account can only read and write its own dreams.">Ogni account può leggere e scrivere solo i propri sogni.</span></span></li>
+          <li><span class="ic">🌙</span><span><b data-en="Biometric lock">Blocco biometrico</b><span data-en="Open the journal with Face ID or your fingerprint. Biometric data never leaves your device.">Apri il diario con Face ID o impronta. I dati biometrici non lasciano mai il dispositivo.</span></span></li>
+          <li><span class="ic">✦</span><span><b data-en="Delete everything, anytime">Cancella tutto, quando vuoi</b><span data-en="Delete your account from the settings: your dreams are removed from the server and every device.">Elimina l’account dalle impostazioni: i sogni vengono rimossi dal server e da ogni dispositivo.</span></span></li>
         </ul>
-        <ul class="features" data-lang="en" hidden>
-          <li><strong>Dream journal</strong><span>Write down every dream as you wake, with emotions, tags, clarity and rating.</span></li>
-          <li><strong>Dream signs</strong><span>Spot the recurring clues that help you realize you are dreaming.</span></li>
-          <li><strong>Reminders and reality checks</strong><span>Morning and daytime notifications to practise awareness.</span></li>
-          <li><strong>Private and synced</strong><span>Your dreams are visible only to you, on your phone and across your devices.</span></li>
-        </ul>
-      </main>
+      </section>
+
+      <section class="closing">
+        <img src="logo-120.png" alt="" />
+        <h2 data-en="Tonight, start dreaming awake.">Stanotte, inizia a sognare sveglio.</h2>
+        <p data-en="LucidDreams is coming soon to iPhone and Android.">LucidDreams arriva presto su iPhone e Android.</p>
+        <div class="stores">
+          <a class="store" aria-disabled="true" role="link" data-store="ios">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.8" /><path d="M10.5 18.5h3" stroke-linecap="round" /></svg>
+            <span><small data-en="Coming soon on the">Presto su</small><strong>App Store</strong></span>
+          </a>
+          <a class="store" aria-disabled="true" role="link" data-store="android">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 3.5l12 8.5-12 8.5z" stroke-linejoin="round" /></svg>
+            <span><small data-en="Coming soon on">Presto su</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+      </section>
 
       <footer class="site">
-        <a href="privacy.html" data-lang="it">Informativa sulla privacy</a>
-        <a href="privacy.html" data-lang="en" hidden>Privacy policy</a>
-        <a href="mailto:luciddreams@gmail.com">luciddreams@gmail.com</a>
+        <a href="privacy.html" data-en="Privacy policy">Informativa sulla privacy</a>
+        <a href="mailto:cleardesignadmin@gmail.com">cleardesignadmin@gmail.com</a>
         <span>© 2026 LucidDreamers</span>
       </footer>
-    </div>
+    </main>
+
     <script src="lang.js"></script>
+    <script src="site.js"></script>
   </body>
 </html>

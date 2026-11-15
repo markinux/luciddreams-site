@@ -124,6 +124,22 @@
     });
   }
 
+  function loadReports() {
+    return request('/rest/v1/rpc/admin_reports', {
+      method: 'POST',
+      headers: { apikey: PUBLISHABLE_KEY, Authorization: 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
+      body: '{}',
+    });
+  }
+
+  function resolveReport(id) {
+    return request('/rest/v1/rpc/admin_resolve_report', {
+      method: 'POST',
+      headers: { apikey: PUBLISHABLE_KEY, Authorization: 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ p_id: id }),
+    });
+  }
+
   function logout() {
     var token = accessToken;
     accessToken = null;
@@ -188,6 +204,48 @@
     document.getElementById('generated').textContent = 'Dati del ' + fmtDateTime(stats.generated_at);
   }
 
+  var REASONS = {
+    spam: 'Spam o pubblicità',
+    abuse: 'Molestie o linguaggio offensivo',
+    inappropriate: 'Contenuti inappropriati',
+    impersonation: 'Si finge un’altra persona',
+    other: 'Altro',
+  };
+
+  function renderReports(reports) {
+    var body = document.querySelector('#reports tbody');
+    body.replaceChildren();
+    document.getElementById('reports-empty').hidden = reports.length > 0;
+    document.getElementById('reports-wrap').hidden = reports.length === 0;
+    reports.forEach(function (r) {
+      var row = el('tr');
+      row.appendChild(el('td', null, fmtDateTime(r.created_at)));
+      row.appendChild(el('td', null, (r.reported ? '@' + r.reported : '—') + ' (' + r.reported_ref + ')'));
+      row.appendChild(el('td', r.reported_total > 1 ? 'num active' : 'num', String(r.reported_total)));
+      row.appendChild(el('td', null, REASONS[r.reason] || r.reason));
+      row.appendChild(el('td', null, r.details || '—'));
+      row.appendChild(el('td', null, r.reporter ? '@' + r.reporter : 'account eliminato'));
+      var cell = el('td');
+      var button = el('button', 'admin-btn', 'Chiudi');
+      button.type = 'button';
+      button.addEventListener('click', function () {
+        button.disabled = true;
+        resolveReport(r.id).then(
+          function () {
+            loadReports().then(renderReports, function (err) { setError('dash-error', err.message); });
+          },
+          function (err) {
+            button.disabled = false;
+            setError('dash-error', err.message);
+          },
+        );
+      });
+      cell.appendChild(button);
+      row.appendChild(cell);
+      body.appendChild(row);
+    });
+  }
+
   function show(id, visible) {
     document.getElementById(id).hidden = !visible;
   }
@@ -206,6 +264,9 @@
         show('login', false);
         show('dashboard', true);
         show('logout', true);
+        loadReports().then(renderReports, function (err) {
+          setError('dash-error', 'Segnalazioni non disponibili: ' + err.message);
+        });
       },
       function (err) {
         if (err.status === 401 || err.status === 403) {

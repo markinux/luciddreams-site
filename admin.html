@@ -61,6 +61,26 @@
             <h2>Ultimi 14 giorni</h2>
             <div id="by-day" class="admin-days"></div>
 
+            <h2>Segnalazioni aperte</h2>
+            <p class="admin-muted">Le chat sono cifrate: contano solo i motivi e il testo scritto da chi segnala. Verifica e, se serve, sospendi l'account dalla dashboard Supabase.</p>
+            <p id="reports-empty" class="admin-muted" hidden>Nessuna segnalazione aperta.</p>
+            <div id="reports-wrap" class="admin-scroll" hidden>
+              <table id="reports">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Segnalato</th>
+                    <th class="num">Totale ricevute</th>
+                    <th>Motivo</th>
+                    <th>Dettagli</th>
+                    <th>Segnalato da</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+
             <h2>Utenti</h2>
             <p class="admin-muted">Solo conteggi: i contenuti dei sogni non sono accessibili (con la cifratura il server non li può leggere).</p>
             <div class="admin-scroll">

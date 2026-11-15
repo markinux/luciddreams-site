@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://bryevlkcvkqfxatvdqvj.supabase.co; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <title>LucidDreams — Statistiche (admin)</title>
+    <link rel="icon" href="logo-120.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="sky">
+      <div class="wrap">
+        <header class="site">
+          <a class="brand" href="./"><img src="logo-120.png" alt="" /><span>LucidDreams · Admin</span></a>
+          <button id="logout" class="admin-btn" type="button" hidden>Esci</button>
+        </header>
+
+        <main>
+          <section id="login" class="admin-card">
+            <h1>Statistiche</h1>
+            <p class="admin-muted">Accesso riservato. Servono email e password dell'account admin dell'app.</p>
+            <form id="login-form" autocomplete="on">
+              <label>Email <input id="email" type="email" autocomplete="username" required /></label>
+              <label>Password <input id="password" type="password" autocomplete="current-password" required /></label>
+              <button class="admin-btn primary" type="submit">Accedi</button>
+            </form>
+            <p id="login-error" class="admin-error" role="alert" hidden></p>
+          </section>
+
+          <section id="dashboard" hidden>
+            <div class="admin-head">
+              <h1>Statistiche</h1>
+              <div>
+                <span id="generated" class="admin-muted"></span>
+                <button id="refresh" class="admin-btn" type="button">Aggiorna</button>
+              </div>
+            </div>
+            <p id="dash-error" class="admin-error" role="alert" hidden></p>
+
+            <div id="totals" class="admin-grid"></div>
+
+            <h2>Ultimi 14 giorni</h2>
+            <div id="by-day" class="admin-days"></div>
+
+            <h2>Utenti</h2>
+            <p class="admin-muted">Solo conteggi: i contenuti dei sogni non sono accessibili (con la cifratura il server non li può leggere).</p>
+            <div class="admin-scroll">
+              <table id="users">
+                <thead>
+                  <tr>
+                    <th>Utente</th>
+                    <th class="num">Sogni</th>
+                    <th class="num">Dream sign</th>
+                    <th class="num">Condivisi (fatti)</th>
+                    <th class="num">Condivisi (ricevuti)</th>
+                    <th>Cifratura</th>
+                    <th>Ultima attività</th>
+                    <th>Iscritto</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="admin.js"></script>
+  </body>
+</html>

@@ -56,6 +56,23 @@
     return 'Errore (' + status + ')' + (text ? ': ' + text : '');
   }
 
+  // Il link di recupero password di Supabase porta nell'indirizzo (dopo #) un token a tempo: lo si usa una volta e lo si toglie subito.
+  function parseRecovery(hash) {
+    if (!hash || hash.charAt(0) !== '#') return null;
+    var params = {};
+    hash.slice(1).split('&').forEach(function (pair) {
+      var i = pair.indexOf('=');
+      if (i > 0) params[decodeURIComponent(pair.slice(0, i))] = decodeURIComponent(pair.slice(i + 1));
+    });
+    return params.type === 'recovery' && params.access_token ? params.access_token : null;
+  }
+
+  function validatePassword(a, b) {
+    if (a.length < 12) return 'La password deve avere almeno 12 caratteri.';
+    if (a !== b) return 'Le due password non coincidono.';
+    return '';
+  }
+
   // ---------------------------------------------------------------- Rete
   function request(path, options) {
     return fetch(SUPABASE_URL + path, options).then(
@@ -88,6 +105,14 @@
       body: JSON.stringify({ email: email, password: password }),
     }).then(function (session) {
       accessToken = session.access_token;
+    });
+  }
+
+  function setPassword(token, password) {
+    return request('/auth/v1/user', {
+      method: 'PUT',
+      headers: { apikey: PUBLISHABLE_KEY, Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: password }),
     });
   }
 
@@ -196,7 +221,41 @@
     );
   }
 
+  function initRecovery() {
+    var token = parseRecovery(window.location.hash);
+    if (!token) return;
+    // Il token non deve restare nella barra degli indirizzi né nella cronologia.
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    show('login', false);
+    show('recovery', true);
+    document.getElementById('recovery-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var first = document.getElementById('new-password');
+      var second = document.getElementById('new-password2');
+      var problem = validatePassword(first.value, second.value);
+      if (problem) return setError('recovery-error', problem);
+      setError('recovery-error', '');
+      setPassword(token, first.value).then(
+        function () {
+          first.value = '';
+          second.value = '';
+          token = null;
+          show('recovery', false);
+          show('login', true);
+          setError('login-error', '');
+          var ok = document.getElementById('login-ok');
+          ok.textContent = 'Password impostata. Accedi con la nuova password.';
+          ok.hidden = false;
+        },
+        function (err) {
+          setError('recovery-error', err.status === 401 || err.status === 403 ? 'Il link è scaduto: chiedi un nuovo recupero password.' : err.message);
+        },
+      );
+    });
+  }
+
   function init() {
+    initRecovery();
     document.getElementById('login-form').addEventListener('submit', function (event) {
       event.preventDefault();
       setError('login-error', '');
@@ -221,5 +280,5 @@
   }
 
   if (typeof document !== 'undefined') init();
-  if (typeof module !== 'undefined') module.exports = { fmtDateTime: fmtDateTime, fmtDate: fmtDate, userLabel: userLabel, isActive: isActive, cards: cards, describeError: describeError };
+  if (typeof module !== 'undefined') module.exports = { parseRecovery: parseRecovery, validatePassword: validatePassword, fmtDateTime: fmtDateTime, fmtDate: fmtDate, userLabel: userLabel, isActive: isActive, cards: cards, describeError: describeError };
 })();

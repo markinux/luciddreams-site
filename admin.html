@@ -23,6 +23,17 @@
         </header>
 
         <main>
+          <section id="recovery" class="admin-card" hidden>
+            <h1>Nuova password</h1>
+            <p class="admin-muted">Scegli la password per l'account admin (almeno 12 caratteri, meglio una frase lunga e unica).</p>
+            <form id="recovery-form" autocomplete="on">
+              <label>Nuova password <input id="new-password" type="password" autocomplete="new-password" minlength="12" required /></label>
+              <label>Ripeti la password <input id="new-password2" type="password" autocomplete="new-password" minlength="12" required /></label>
+              <button class="admin-btn primary" type="submit">Imposta password</button>
+            </form>
+            <p id="recovery-error" class="admin-error" role="alert" hidden></p>
+          </section>
+
           <section id="login" class="admin-card">
             <h1>Statistiche</h1>
             <p class="admin-muted">Accesso riservato. Servono email e password dell'account admin dell'app.</p>
@@ -31,6 +42,7 @@
               <label>Password <input id="password" type="password" autocomplete="current-password" required /></label>
               <button class="admin-btn primary" type="submit">Accedi</button>
             </form>
+            <p id="login-ok" class="admin-ok" role="status" hidden></p>
             <p id="login-error" class="admin-error" role="alert" hidden></p>
           </section>
 

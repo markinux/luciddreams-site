@@ -13,6 +13,7 @@
 }
 .admin-btn.primary { background: var(--aurora); color: var(--primary-ink); border: 0; font-weight: 700; }
 .admin-muted { color: var(--muted); font-size: 14px; }
+.admin-ok { color: var(--lucid); margin: 12px 0 0; }
 .admin-error { color: #ff8a9a; margin: 12px 0 0; }
 .admin-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .admin-head > div { display: flex; align-items: center; gap: 12px; }

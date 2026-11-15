@@ -18,7 +18,7 @@
 
       <main data-lang="it">
         <h1 class="page">Informativa sulla privacy</h1>
-        <p class="updated">Ultimo aggiornamento: 12 novembre 2026</p>
+        <p class="updated">Ultimo aggiornamento: 15 novembre 2026</p>
 
         <section>
           <h2>Titolare del trattamento</h2>
@@ -30,6 +30,38 @@
           <p>I contenuti che inserisci nel diario (testi, date, tag, emozioni, valutazioni e dream sign) sono salvati sul dispositivo e, se accedi a un account, sincronizzati con Supabase per consentirti di recuperarli sui tuoi dispositivi.</p>
           <p>Promemoria e preferenze dell’app sono conservati localmente. Il blocco biometrico usa la funzione di autenticazione del dispositivo: LucidDreamers non riceve né conserva impronte o dati del volto.</p>
           <p>Statistiche d’uso: per capire quanti utenti usano l’app e migliorarla, il servizio registra la data dell’ultima attività di ogni account e conta quanti sogni e quante condivisioni ha creato, senza leggerne il contenuto. Questi conteggi sono visibili solo all’amministratore del servizio.</p>
+        </section>
+        <section>
+          <h2>Cifratura end-to-end (facoltativa)</h2>
+          <p>Se attivi la cifratura end-to-end, sogni e dream sign vengono cifrati sul tuo dispositivo prima di essere sincronizzati: Supabase e LucidDreamers conservano solo dati illeggibili, più dati tecnici come identificativi, data di creazione e di modifica e stato di cancellazione. Le chiavi sono protette dalla tua passphrase e da un codice di recupero di 24 parole che noi non conosciamo: se perdi entrambi non possiamo recuperare i tuoi sogni sincronizzati. I sogni che condividi sono cifrati per il destinatario, che deve avere la cifratura attiva; finché un destinatario non la attiva, il server conserva per lui una copia leggibile di quel sogno, che viene eliminata appena la attiva. Anche testi, foto e registrazioni vocali della chat e delle voci per il MILD sono cifrati end-to-end, ma solo quando entrambe le persone hanno la cifratura attiva; altrimenti restano come prima. I contenuti già salvati vengono cifrati in background e la copia in chiaro viene eliminata solo dopo che entrambe le persone hanno verificato la copia cifrata. Restano visibili al server dati tecnici come mittente, destinatario, data, tipo di messaggio e dimensione dei file. Eventuali copie di backup dei fornitori create prima dell’attivazione possono contenere i dati in chiaro fino alla loro scadenza.</p>
+        </section>
+        <section>
+          <h2>Community e condivisione</h2>
+          <p>La community è facoltativa e disattivata finché non la attivi. Se la attivi trattiamo il nome utente, il nome visualizzato, le richieste di amicizia e le tue scelte di visibilità. Per trovare amici dalla rubrica, le email dei contatti vengono trasformate sul dispositivo in codici SHA-256 e confrontate senza essere salvate; la rubrica non lascia mai il dispositivo. I sogni condivisi sono visibili solo alle persone che scegli, in sola lettura, e puoi revocare la condivisione in qualsiasi momento.</p>
+        </section>
+        <section>
+          <h2>Chat</h2>
+          <p>La chat è disponibile solo tra amici. Messaggi e foto sono conservati su Supabase in uno spazio privato accessibile solo a mittente e destinatario. I messaggi a tempo e le foto da vedere una volta vengono cancellati dal server, foto comprese, entro circa un minuto dalla scadenza; chiunque dei due può eliminare un messaggio in qualsiasi momento. Le notifiche push mostrano solo il nome del mittente, mai il contenuto. Gli screenshot della chat sono bloccati dove il sistema lo consente.</p>
+        </section>
+        <section>
+          <h2>Notifiche push</h2>
+          <p>Se consenti le notifiche, conserviamo il token del tuo dispositivo e la lingua per avvisarti di messaggi, richieste di amicizia, sogni condivisi e richieste di voce, tramite i servizi di notifica di Expo, Apple e Google. Le notifiche mostrano solo il nome di chi le ha generate, mai il contenuto, e puoi disattivarle in qualsiasi momento dalle impostazioni del sistema.</p>
+        </section>
+        <section>
+          <h2>Blocco e segnalazione</h2>
+          <p>Puoi bloccare un utente: il blocco rimuove tra voi amicizia, condivisioni e richieste di voce e vi nasconde a vicenda nella community, senza avvisare l’altra persona. Se segnali un utente conserviamo il motivo e il testo che scrivi, il tuo identificativo e quello della persona segnalata, per valutare la segnalazione; le chat cifrate non sono leggibili da noi e non vengono allegate. Le segnalazioni sono visibili solo all’amministratore del servizio.</p>
+        </section>
+        <section>
+          <h2>Acquisti Premium</h2>
+          <p>Premium è un acquisto unico gestito da Apple o Google: non riceviamo né conserviamo i dati di pagamento. L’app legge dal tuo account dello store se hai acquistato Premium e conserva sul dispositivo solo questo stato.</p>
+        </section>
+        <section>
+          <h2>Esportazione dei dati</h2>
+          <p>Dalle impostazioni puoi esportare gratuitamente tutto il tuo diario in un file JSON leggibile da altri programmi; l’esportazione in PDF fa parte di Premium.</p>
+        </section>
+        <section>
+          <h2>Copie di backup</h2>
+          <p>Per poter ripristinare il servizio in caso di guasto facciamo copie di backup periodiche del database, conservate in modo protetto per un periodo limitato (al massimo un anno). I contenuti cifrati end-to-end restano illeggibili anche nei backup; i dati che cancelli possono restare nelle copie fino alla loro eliminazione.</p>
         </section>
         <section>
           <h2>Finalità e servizi</h2>
@@ -47,7 +79,7 @@
 
       <main data-lang="en" hidden>
         <h1 class="page">Privacy policy</h1>
-        <p class="updated">Last updated: November 12, 2026</p>
+        <p class="updated">Last updated: November 15, 2026</p>
 
         <section>
           <h2>Data controller</h2>
@@ -59,6 +91,38 @@
           <p>Journal content you enter (text, dates, tags, emotions, ratings, and dream signs) is stored on your device and, when you sign in, synced with Supabase so you can access it across your devices.</p>
           <p>Reminders and app preferences are stored locally. Biometric locking uses your device’s authentication feature; LucidDreamers does not receive or store fingerprints or face data.</p>
           <p>Usage statistics: to understand how many people use the app and to improve it, the service records the date of each account’s last activity and counts how many dreams and shares it has created, without reading their content. These counts are visible only to the service administrator.</p>
+        </section>
+        <section>
+          <h2>End-to-end encryption (optional)</h2>
+          <p>If you turn on end-to-end encryption, dreams and dream signs are encrypted on your device before syncing: Supabase and LucidDreams only keep unreadable data, plus technical data such as identifiers, creation and modification dates and deletion status. The keys are protected by your passphrase and by a 24-word recovery code that we do not know: if you lose both, we cannot recover your synced dreams. Dreams you share are encrypted for the recipient, who must have encryption turned on; until a recipient turns it on, the server keeps a readable copy of that dream for them, which is deleted as soon as they do. Texts, photos and voice recordings in chats and MILD voices are also end-to-end encrypted, but only when both people have encryption turned on; otherwise they stay as before. Content that was already saved is encrypted in the background and the unencrypted copy is deleted only after both people have verified the encrypted copy. The server can still see technical data such as sender, recipient, date, message type and file size. Any provider backups created before you turned it on may contain the data unencrypted until they expire.</p>
+        </section>
+        <section>
+          <h2>Community and sharing</h2>
+          <p>The community is optional and off until you turn it on. If you do, we process your username, display name, friend requests and visibility choices. To find friends from your contacts, their email addresses are turned into SHA-256 codes on your device and compared without being stored; your address book never leaves the device. Shared dreams are visible only to the people you choose, read-only, and you can revoke sharing at any time.</p>
+        </section>
+        <section>
+          <h2>Chat</h2>
+          <p>Chat is available only between friends. Messages and photos are stored on Supabase in a private space accessible only to the sender and recipient. Timed messages and view-once photos are deleted from the server, photos included, within about a minute of expiring; either person can delete a message at any time. Push notifications show only the sender’s name, never the content. Chat screenshots are blocked where the system allows it.</p>
+        </section>
+        <section>
+          <h2>Push notifications</h2>
+          <p>If you allow notifications, we store your device token and language to alert you about messages, friend requests, shared dreams and voice requests, through the Expo, Apple and Google notification services. Notifications only show the name of the person who triggered them, never the content, and you can turn them off at any time in your system settings.</p>
+        </section>
+        <section>
+          <h2>Blocking and reporting</h2>
+          <p>You can block a user: blocking removes friendship, shares and voice requests between you and hides you from each other in the community, without notifying the other person. If you report a user, we keep the reason and the text you write, your identifier and the reported person’s identifier, to review the report; encrypted chats are not readable by us and are not attached. Reports are visible only to the service administrator.</p>
+        </section>
+        <section>
+          <h2>Premium purchases</h2>
+          <p>Premium is a one-time purchase handled by Apple or Google: we do not receive or store payment details. The app checks your store account to see whether you bought Premium and keeps only that status on your device.</p>
+        </section>
+        <section>
+          <h2>Data export</h2>
+          <p>In Settings you can export your whole journal for free as a JSON file other programs can read; PDF export is part of Premium.</p>
+        </section>
+        <section>
+          <h2>Backups</h2>
+          <p>To be able to restore the service after a failure we make periodic backups of the database, kept securely for a limited time (at most one year). End-to-end encrypted content stays unreadable in backups too; data you delete may remain in the copies until they are removed.</p>
         </section>
         <section>
           <h2>Purposes and services</h2>
